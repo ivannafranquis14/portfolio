@@ -1,20 +1,28 @@
 import React from 'react';
 
-const Habilidades = () => {
+const traduccionesHabilidades = {
+  ES: { titulo: "MIS HABILIDADES", pruebasManuales: "Pruebas Manuales" },
+  EN: { titulo: "MY SKILLS", pruebasManuales: "Manual Testing" },
+  IT: { titulo: "LE MIE COMPETENZE", pruebasManuales: "Istruttoria Manuale" }
+};
+
+const Habilidades = ({ idioma }) => {
+  const t = traduccionesHabilidades[idioma];
+
   const skills = [
     { name: "HTML", img: "material-icon-theme_html.png", bgClass: "bg-[#F8F0E5] text-[#1B1B1B]" },
     { name: "React", img: "material-icon-theme_react.png", bgClass: "bg-[#F8F0E5] text-[#1B1B1B]" },
     { name: "JavaScript", img: "material-icon-theme_javascript.png", bgClass: "bg-[#F8F0E5] text-[#1B1B1B]" },
     { name: "Tailwind CSS", img: "skill-icons_tailwindcss-light.png", bgClass: "bg-[#F8F0E5] text-[#1B1B1B]" },
     { name: "Figma", img: "logos_figma.png", bgClass: "bg-[#F8F0E5] text-[#1B1B1B]" },
-    { name: "Node.js", img: "vscode-icons_file-type-node.png", bgClass: "bg-[#FFF9C4] text-[#000000]" }, // Amarillo pastel
-    { name: "Playwright", img: "logos_playwright.png", bgClass: "bg-[#E3F2FD] text-[#1b1f24]" },  // Azul pastel
-    { name: "Pruebas Manuales", img: "healthicons_magnifying-glass.png", bgClass: "bg-[#E3F2FD] text-[#1b1f24]" } // Azul pastel
+    { name: "Node.js", img: "vscode-icons_file-type-node.png", bgClass: "bg-[#FFF9C4] text-[#000000]" },
+    { name: "Playwright", img: "logos_playwright.png", bgClass: "bg-[#E3F2FD] text-[#1b1f24]" },
+    { name: t.pruebasManuales, img: "healthicons_magnifying-glass.png", bgClass: "bg-[#E3F2FD] text-[#1b1f24]" }
   ];
 
   return (
     <section id="habilidades" className="py-12">
-      <h2 className="text-[40px] font-bold text-center mt-[100px] p-[50px]">MIS HABILIDADES</h2>
+      <h2 className="text-[40px] font-bold text-center mt-[100px] p-[50px] text-black">{t.titulo}</h2>
       <div className="px-4">
         <ul className="flex flex-wrap justify-center gap-x-5 gap-y-20 max-w-[850px] mx-auto list-none p-0">
           {skills.map((skill, index) => (
