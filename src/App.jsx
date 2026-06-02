@@ -1,9 +1,9 @@
 import React from 'react';
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Proyectos from "./components/Proyectos";
-import Habilidades from "./components/Habilidades";
-import Footer from "./components/Footer";
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Proyectos from './components/Proyectos';
+import Habilidades from './components/Habilidades';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -20,3 +20,4 @@ function App() {
 }
 
 export default App;
+
